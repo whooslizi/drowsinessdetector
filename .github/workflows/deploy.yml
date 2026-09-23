@@ -29,12 +29,12 @@ jobs:
           node-version: 20
 
       - name: Install Dependencies
-        run: npm install
+        run: npm install --legacy-peer-deps
 
       - name: Build Application
         run: npx vite build
 
-      - name: Create Fallback
+      - name: Create 404.html Fallback
         run: cp dist/index.html dist/404.html
 
       - name: Upload Pages Artifact
