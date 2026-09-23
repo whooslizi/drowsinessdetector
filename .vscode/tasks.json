@@ -1,0 +1,15 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Environment Setup",
+      "type": "shell",
+      "command": "python3 -m venv .venv && source .venv/bin/activate && pip install -r requirements.txt"
+    },
+    {
+      "label": "Build macOS App",
+      "type": "shell",
+      "command": "pyinstaller --add-data 'dist:dist' --windowed --noconsole --name 'SleepyDetector' app.py"
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Launch Desktop App (app.py)",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/app.py",
+      "console": "integratedTerminal"
+    },
+    {
+      "name": "Run Vision Detector (detector.py)",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/detector.py",
+      "console": "integratedTerminal"
+    }
+  ]
+}
