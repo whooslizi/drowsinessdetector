@@ -1,8 +1,10 @@
 name: Deploy
+
 on:
   push:
     branches:
       - eoleun
+  workflow_dispatch:
 
 permissions:
   contents: read
@@ -14,10 +16,8 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  build-and-deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+  build:
+    name: Build Frontend
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Source Code
@@ -31,19 +31,25 @@ jobs:
       - name: Install Dependencies
         run: npm install
 
-      - name: Build Web Application
+      - name: Build Application
         run: npx vite build
 
-      - name: Setup Pages
-        uses: actions/configure-pages@v5
-        with:
-          enablement: true
+      - name: Create Fallback
+        run: cp dist/index.html dist/404.html
 
-      - name: Upload Artifact
+      - name: Upload Pages Artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: './dist'
+          path: 'dist'
 
+  deploy:
+    name: Deploy to GitHub Pages
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
