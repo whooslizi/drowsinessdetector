@@ -13,21 +13,25 @@ A simple python & web app that tracks facial landmarks to check your eyes and pr
 ## Setup
 
 ```bash
-# install python requirements
+# 1. install python requirements
 python3 -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
+
+# 2. run python desktop app
 python app.py
 
-# run web UI locally
+# 3. or run web UI locally
 npm install
 npm run dev
+
+# 4. open http://localhost:5173 and enjoy being traumatized!
 ```
 
 ## Deploy
 
-Pushes to the `eoleun` branch automatically build Vite and deploy to GitHub Pages via GitHub Actions (`.github/workflows/deploy.yml`).
+Pushes to the branch automatically build Vite and deploy to GitHub Pages via GitHub Actions (`.github/workflows/deploy.yml`).
 
 ## Notes
 
-- This project was solely (mainly) used as my school project and it might contain code that burns your eyes.
+- This project was made solely for my school project, so it might contain some code that burns your eyes.
