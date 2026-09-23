@@ -32,6 +32,13 @@ npm run dev
 
 Pushes to the branch automatically build Vite and deploy to GitHub Pages via GitHub Actions (`.github/workflows/deploy.yml`).
 
+## Credits
+
+- [firwer/winxpsite](https://github.com/firwer/winxpsite) & [Microsoft Windows XP](https://www.microsoft.com/) for desktop theme aesthetic & Bliss wallpaper inspiration
+- [Google MediaPipe](https://github.com/google-ai-edge/mediapipe) & [OpenCV](https://opencv.org/) for real-time face mesh landmark eye tracking
+- [Tenor](https://tenor.com/) for the crying baby meme asset
+- [Vue 3](https://vuejs.org/), [Vite](https://vitejs.dev/) & [PyWebView](https://pywebview.flowrl.com/) for frontend & desktop container runtime
+
 ## Notes
 
 - This project was made solely for my school project, so it might contain some code that burns your eyes.
